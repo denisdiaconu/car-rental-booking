@@ -16,6 +16,7 @@ const Sidebar = () => {
       <div className="group relative">
         <label htmlFor="image">
           <img
+            className="h-9 md:h-14 w-9 md:w-14 rounded-full mx-auto"
             src={
               image
                 ? URL.createObjectURL(image)
@@ -36,14 +37,13 @@ const Sidebar = () => {
         </label>
       </div>
       {image && (
-        <button>
+        <button className=" absolute top-0 right-0 flex p-2 gap-1 bg-primary/10 text-primary cursor-pointer">
           Save{' '}
           <img
             src={assets.check_icon}
             alt="check"
             width={13}
             onClick={updateImage}
-            className=" absolute top-0 right-0 flex p-2 gap-1 bg-primary/10 text-primary cursor-pointer"
           />
         </button>
       )}
