@@ -3,6 +3,7 @@ import Title from '../../components/owner/Title';
 import { assets } from '../../assets/assets';
 
 const AddCar = () => {
+  const currency = import.meta.env.VITE_CURRENCY;
   const [image, setImage] = useState(null);
   const [car, setCar] = useState({
     brand: '',
@@ -68,6 +69,43 @@ const AddCar = () => {
               placeholder="e.g. 320i, A4, Q5..."
               className="px-3 py-2 mt-1 border border-borderColor rounded-md outline-none"
             />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="flex flex-col w-full">
+            <label>Year</label>
+            <input
+              type="number"
+              value={car.year}
+              onChange={(e) => setCar({ ...car, year: e.target.value })}
+              required
+              placeholder="2025"
+              className="px-3 py-2 mt-1 border border-borderColor rounded-md outline-none"
+            />
+          </div>
+          <div className="flex flex-col w-full">
+            <label>Daily Price ({currency})</label>
+            <input
+              type="number"
+              value={car.pricePerDay}
+              onChange={(e) => setCar({ ...car, pricePerDay: e.target.value })}
+              required
+              placeholder="100"
+              className="px-3 py-2 mt-1 border border-borderColor rounded-md outline-none"
+            />
+          </div>
+          <div className="flex flex-col w-full">
+            <label>Category</label>
+            <select
+              onChange={(e) => setCar({ ...car, category: e.target.value })}
+              value={car.category}
+              className="px-3 py-2 mt-1 border border-borderColor rounded-md outline-none"
+            >
+              <option value="">Select a category</option>
+              <option value="Sedan">Sedan</option>
+              <option value="SUV">SUV</option>
+              <option value="Van">Van</option>
+            </select>
           </div>
         </div>
       </form>
