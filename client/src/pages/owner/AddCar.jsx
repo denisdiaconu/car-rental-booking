@@ -29,14 +29,23 @@ const AddCar = () => {
         onSubmit={onSubmitHandler}
         className="flex flex-col gap-5 text-gray-500 text-sm mt-6 max-w-xl"
       >
-        <label htmlFor="car-image">
-          <img
-            src={image ? URL.createObjectURL(image) : assets.upload_icon}
-            alt="image"
-            className="h-14 rounded cursor-pointer"
-          />
-          <input id="car-image" type="file" accept="image/*" hidden/>
-        </label>
+        <div className="flex items-center gap-2 w-full">
+          <label htmlFor="car-image">
+            <img
+              src={image ? URL.createObjectURL(image) : assets.upload_icon}
+              alt="image"
+              className="h-14 rounded cursor-pointer"
+            />
+            <input
+              id="car-image"
+              type="file"
+              accept="image/*"
+              hidden
+              onChange={(e) => setImage(e.target.files[0])}
+            />
+          </label>
+          <p className="text-sm text-gray-500">Upload a picture of your car</p>
+        </div>
       </form>
     </div>
   );
