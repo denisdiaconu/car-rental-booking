@@ -176,7 +176,10 @@ const AddCar = () => {
             className="px-3 py-2 mt-1 border border-borderColor rounded-md outline-none"
           ></textarea>
         </div>
-        
+        <button className="flex items-center gap-2 px-4 py-2.5 mt-4 bg-primary text-white rounded-md font-medium w-max cursor-pointer">
+          <img src={assets.tick_icon} alt="tick_icon" />
+          List Your Car
+        </button>
       </form>
     </div>
   );
