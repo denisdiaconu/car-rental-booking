@@ -142,13 +142,41 @@ const AddCar = () => {
             <input
               type="number"
               value={car.seating_capacity}
-              onChange={(e) => setCar({ ...car, seating_capacity: e.target.value })}
+              onChange={(e) =>
+                setCar({ ...car, seating_capacity: e.target.value })
+              }
               required
               placeholder="4"
               className="px-3 py-2 mt-1 border border-borderColor rounded-md outline-none"
             />
           </div>
         </div>
+        <div className="flex flex-col w-full">
+          <label>Location</label>
+          <select
+            onChange={(e) => setCar({ ...car, location: e.target.value })}
+            value={car.location}
+            className="px-3 py-2 mt-1 border border-borderColor rounded-md outline-none"
+          >
+            <option value="">Select a location</option>
+            <option value="New York">New York</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Houston">Houston</option>
+          </select>
+        </div>
+        <div className="flex flex-col w-full">
+          <label>Description</label>
+          <textarea
+            value={car.description}
+            rows={5}
+            onChange={(e) => setCar({ ...car, description: e.target.value })}
+            required
+            placeholder="e.g. This car is in excellent condition and has low mileage..."
+            className="px-3 py-2 mt-1 border border-borderColor rounded-md outline-none"
+          ></textarea>
+        </div>
+        
       </form>
     </div>
   );
