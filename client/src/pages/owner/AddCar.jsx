@@ -108,6 +108,47 @@ const AddCar = () => {
             </select>
           </div>
         </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="flex flex-col w-full">
+            <label>Transmission</label>
+            <select
+              onChange={(e) => setCar({ ...car, transmission: e.target.value })}
+              value={car.transmission}
+              className="px-3 py-2 mt-1 border border-borderColor rounded-md outline-none"
+            >
+              <option value="">Select a transmission</option>
+              <option value="Automatic">Automatic</option>
+              <option value="Manual">Manual</option>
+              <option value="Semi">Semi</option>
+            </select>
+          </div>
+          <div className="flex flex-col w-full">
+            <label>Fuel Type</label>
+            <select
+              onChange={(e) => setCar({ ...car, fuel_type: e.target.value })}
+              value={car.fuel_type}
+              className="px-3 py-2 mt-1 border border-borderColor rounded-md outline-none"
+            >
+              <option value="">Select a fuel type</option>
+              <option value="Gas">Gas</option>
+              <option value="Petrol">Petrol</option>
+              <option value="Diesel">Diesel</option>
+              <option value="Electric">Electric</option>
+              <option value="Hybrid">Hybrid</option>
+            </select>
+          </div>
+          <div className="flex flex-col w-full">
+            <label>Seating Capacity</label>
+            <input
+              type="number"
+              value={car.seating_capacity}
+              onChange={(e) => setCar({ ...car, seating_capacity: e.target.value })}
+              required
+              placeholder="4"
+              className="px-3 py-2 mt-1 border border-borderColor rounded-md outline-none"
+            />
+          </div>
+        </div>
       </form>
     </div>
   );
