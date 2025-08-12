@@ -33,8 +33,11 @@ const ManageBookings = () => {
           </thead>
           <tbody>
             {bookings.map((booking, index) => (
-              <tr key={index} className="border-t border-borderColor">
-
+              <tr key={index} className="border-t border-borderColor text-gray-500">
+                <td className='p-3 flex items-center gap-3'>
+                  <img src={booking.car.image} alt="car" className='h-12 w-12 aspect-square rounded-md object-cover'/>
+                  <p className='font-medium max-md:hidden'>{booking.car.brand} {booking.car.model}</p>
+                </td>
               </tr>
             ))}
           </tbody>
