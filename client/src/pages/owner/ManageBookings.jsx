@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { dummyMyBookingsData } from '../../assets/assets';
 import Title from '../../components/owner/Title';
 
@@ -8,11 +8,11 @@ const ManageBookings = () => {
 
   const fetchOwnerBookings = async () => {
     setBookings(dummyMyBookingsData);
-  }
+  };
 
   useEffect(() => {
     fetchOwnerBookings();
-  },[])
+  }, []);
 
   return (
     <div className="px-4 pt-10 md:px-10 w-full">
@@ -33,10 +33,26 @@ const ManageBookings = () => {
           </thead>
           <tbody>
             {bookings.map((booking, index) => (
-              <tr key={index} className="border-t border-borderColor text-gray-500">
-                <td className='p-3 flex items-center gap-3'>
-                  <img src={booking.car.image} alt="car" className='h-12 w-12 aspect-square rounded-md object-cover'/>
-                  <p className='font-medium max-md:hidden'>{booking.car.brand} {booking.car.model}</p>
+              <tr
+                key={index}
+                className="border-t border-borderColor text-gray-500"
+              >
+                <td className="p-3 flex items-center gap-3">
+                  <img
+                    src={booking.car.image}
+                    alt="car"
+                    className="h-12 w-12 aspect-square rounded-md object-cover"
+                  />
+                  <p className="font-medium max-md:hidden">
+                    {booking.car.brand} {booking.car.model}
+                  </p>
+                </td>
+                <td className="p-3 max-md:hidden">
+                  {booking.pickupDate.split('T')[0]} to{' '}
+                  {booking.returnDate.split('T')[0]}
+                </td>
+                <td className='p-3'>
+                  {currency}{booking.price}
                 </td>
               </tr>
             ))}
@@ -44,7 +60,7 @@ const ManageBookings = () => {
         </table>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ManageBookings
+export default ManageBookings;
