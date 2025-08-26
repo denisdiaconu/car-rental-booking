@@ -1,4 +1,7 @@
+import imagekit from '../configs/imageKit.js';
 import User from '../models/User.js';
+import fs from 'fs';
+import Car from '../models/Car.js';
 
 // API to Change User Role to Owner
 export const changeRoleToOwner = async (req, res) => {
@@ -14,14 +17,32 @@ export const changeRoleToOwner = async (req, res) => {
 
 // API to List Car
 export const addCar = async (req, res) => {
-    try{
-        const {_id} = req.user;
-        let car = JSON.parse(req.body.carData);
-        const imageFile = req.file;
+  try {
+    const { _id } = req.user;
+    let car = JSON.parse(req.body.carData);
+    const imageFile = req.file;
 
-        
-    } catch(error){
-        console.log(error.message);
-        res.json({ success: false, message: error.message });
-    }
-}
+    // Upload image to imageKit
+    const fileBuffer = fs.readFileSync(imageFile.path);
+    const response = await imagekit.upload({
+      file: fileBuffer,
+      fileName: imageFile.originalname,
+      folder: '/cars',
+    });
+    // Optimization using ImageKit URL transformations
+    var optimizedImageUrl = imagekit.url({
+      path: response.filePath,
+      transformation: [
+        { width: '1280' }, // Width
+        { quality: 'auto' }, // Auto compression
+        { format: 'webp' }, // Modern format
+      ],
+    });
+    const image = optimizedImageUrl;
+    await Car.create({ ...car, owner: _id, image });
+    res.json({ success: true, message: 'Car added successfully' });
+  } catch (error) {
+    console.log(error.message);
+    res.json({ success: false, message: error.message });
+  }
+};
