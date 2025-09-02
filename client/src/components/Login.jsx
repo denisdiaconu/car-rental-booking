@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useAppContext } from '../context/AppContext';
 
-const Login = ({ setShowLogin }) => {
+const Login = () => {
+  const { setShowLogin, axios, setToken } = useAppContext();
   const [state, setState] = useState('login');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
