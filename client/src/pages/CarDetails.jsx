@@ -8,10 +8,16 @@ import toast from 'react-hot-toast';
 const CarDetails = () => {
   const [car, setCar] = useState(null);
   const { id } = useParams();
-  const { cars, axios, pickupDate, setPickupDate, returnDate, setReturnDate } =
-    useAppContext();
+  const {
+    cars,
+    axios,
+    pickupDate,
+    setPickupDate,
+    returnDate,
+    setReturnDate,
+    currency,
+  } = useAppContext();
   const navigate = useNavigate();
-  const currency = import.meta.env.VITE_CURRENCY;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
