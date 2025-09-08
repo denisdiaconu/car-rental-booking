@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { assets, cityList } from '../assets/assets';
 import { useAppContext } from '../context/AppContext';
+import { motion } from 'motion/react';
 
 const Hero = () => {
   const [pickupLocation, setPickupLocation] = useState('');
@@ -19,7 +20,7 @@ const Hero = () => {
     );
   };
   return (
-    <div className="h-screen flex flex-col items-center justify-center gap-14 bg-light text-center">
+    <motion.div className="h-screen flex flex-col items-center justify-center gap-14 bg-light text-center">
       <h1 className="text-4xl md:text-5xl font-semibold">
         Luxury cars on rent
       </h1>
@@ -79,7 +80,7 @@ const Hero = () => {
         </button>
       </form>
       <img src={assets.main_car} alt="car" className="max-h-72" />
-    </div>
+    </motion.div>
   );
 };
 
