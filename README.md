@@ -22,14 +22,23 @@ This project is designed to be scalable and production-ready, featuring authenti
 
 <table width="100%">
   <tr>
-    <td><img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/hero.png" alt="Home" style="width:100%;"/></td>
-    <td><img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/cars.png" alt="Cars" style="width:100%;"/></td>
+    <td>
+      <img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/hero.png" alt="Home" style="width:100%; height:300px; object-fit:cover;"/>
+    </td>
+    <td>
+      <img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/cars.png" alt="Cars" style="width:100%; height:300px; object-fit:cover;"/>
+    </td>
   </tr>
   <tr>
-    <td><img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/bookings.png" alt="Bookings" style="width:100%;"/></td>
-    <td><img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/dashboard.png" alt="Dashboard" style="width:100%;"/></td>
+    <td>
+      <img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/bookings.png" alt="Bookings" style="width:100%; height:300px; object-fit:cover;"/>
+    </td>
+    <td>
+      <img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/dashboard.png" alt="Dashboard" style="width:100%; height:300px; object-fit:cover;"/>
+    </td>
   </tr>
 </table>
+
 
 
 ---
