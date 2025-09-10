@@ -18,16 +18,19 @@ This project is designed to be scalable and production-ready, featuring authenti
 
 ---
 
-<table>
+## Project Preview
+
+<table width="100%">
   <tr>
-    <td><img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/hero.png" alt="Home" width="300"/></td>
-    <td><img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/cars.png" alt="Cars" width="300"/></td>
+    <td><img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/hero.png" alt="Home" style="width:100%;"/></td>
+    <td><img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/cars.png" alt="Cars" style="width:100%;"/></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/bookings.png" alt="Bookings" width="300"/></td>
-    <td><img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/dashboard.png" alt="Dashboard" width="300"/></td>
+    <td><img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/bookings.png" alt="Bookings" style="width:100%;"/></td>
+    <td><img src="https://github.com/denisdiaconu/car-rental-booking/blob/master/client/public/screenshots/dashboard.png" alt="Dashboard" style="width:100%;"/></td>
   </tr>
 </table>
+
 
 ---
 
