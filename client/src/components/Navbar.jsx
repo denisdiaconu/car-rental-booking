@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { assets, menuLinks } from '../assets/assets.js';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAppContext } from '../context/AppContext';
@@ -25,6 +25,11 @@ const Navbar = () => {
       toast.error(error.message);
     }
   };
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
+
   return (
     <motion.div
       initial={{ y: -20, opacity: 0 }}
