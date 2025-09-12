@@ -24,13 +24,13 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="h-screen flex flex-col items-center justify-center gap-14 bg-light text-center"
+      className="h-screen flex flex-col items-center justify-start md:justify-center gap-14 bg-light text-center"
     >
       <motion.h1
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-4xl md:text-5xl font-semibold"
+        className="text-4xl md:text-5xl font-semibold mt-10 md:mt-0"
       >
         Luxury cars on rent
       </motion.h1>
